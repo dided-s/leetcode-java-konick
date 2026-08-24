@@ -44,6 +44,7 @@ public class Solution {
                 newNums.add(x);
             }
         }
+
         return newNums
                 .stream()
                 .mapToInt(i -> i)
@@ -54,7 +55,9 @@ public class Solution {
         int k = divisors.length;
         long result = 0;
 
-        for (int mask = 1; mask < (1 << k); mask++) {
+        int pow2K = (1 << k);
+
+        for (int mask = 1; mask < pow2K; mask++) {
             long currentLcm = 1;
             int selectedCount = 0;
             boolean valid = true;
